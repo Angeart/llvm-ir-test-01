@@ -13,5 +13,12 @@ set(SOURCES main.cpp)
 
 add_executable(llvm-ir-test-01 ${SOURCES})
 
-llvm_map_components_to_libnames(llvm_libs support core irreader)
+llvm_map_components_to_libnames(llvm_libs
+    support
+    core
+    irreader
+    x86codegen
+    orcjit
+    all
+)
 target_link_libraries(llvm-ir-test-01 ${llvm_libs})
